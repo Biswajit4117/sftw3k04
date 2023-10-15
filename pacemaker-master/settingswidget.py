@@ -49,6 +49,10 @@ class SettingsWidget(QWidget):
 
     @Slot(str)
     def loadPacingModeParameters(self, pacingMode: str) -> None:
+        def sendParam(name):
+            def inner(value):
+                print(f'{name} set to {value}')
+            return inner
         print(f'loading {pacingMode} parameters')
         paramPanel = self.ui.paramPanel
         layout = paramPanel.layout()
@@ -59,6 +63,7 @@ class SettingsWidget(QWidget):
             name, value, units = parameter.name, parameter.value, parameter.units
             box = QSpinBox()
             box.setValue(value)
+            box.valueChanged.connect(sendParam(name))
             layout.addRow(f'{name} ({units})', box)
         paramPanel.setLayout(layout)
 

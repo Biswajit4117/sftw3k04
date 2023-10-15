@@ -1,9 +1,13 @@
 from PySide6.QtWidgets import QDialog, QMessageBox
+from PySide6.QtCore import Slot, Signal
 from PySide6.QtSql import QSqlDatabase, QSqlError, QSqlQuery
 from ui_login import Ui_Login
 from registerdialog import RegisterDialog
 
 class Login(QDialog):
+
+    success = Signal(str)
+
     def __init__(self, parent=None):
         super().__init__(parent)
         self.ui = Ui_Login()

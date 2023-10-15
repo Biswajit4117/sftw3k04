@@ -17,14 +17,14 @@ class RegisterDialog(QDialog):
         if password != passwordRepeat:
             QMessageBox.warning(self, "Register Failed", "Passwords do not match")
             return
-        if len(password) < 10:
-            QMessageBox.warning(self, "Register Failed", "Password must be at least 10 characters")
+        if len(password) > 10:
+            QMessageBox.warning(self, "Register Failed", "Password must be less than 10 characters")
             return
         if len(userName) < 5:
             QMessageBox.warning(self, "Register Failed", "Username must be at least 5 characters")
             return
         if insertUser(userName, password).type() != QSqlError.ErrorType.NoError:
-            QMessageBox.warning(self, "Register Failed", f"Error type: {insertUser(userName, password).type()}")
+            QMessageBox.warning(self, "Register Failed", f"Error message: {insertUser(userName, password).text()}")
             return
         QMessageBox.information(self, "Register Success", "Register Success")
         super().accept()

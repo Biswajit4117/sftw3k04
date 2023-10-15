@@ -8,9 +8,16 @@ if __name__ == "__main__":
     app = QApplication(sys.argv)
     from database import initDb
     initDb()
+    window = ModeSelection(None)
     login = Login(None)
     login.exec()
+    window.ui.label.setText(f'Welcome, {login.username}')
     # apply_stylesheet(app, 'dark_amber.xml')
-    window = ModeSelection(None, login.username)
     window.show()
+    def relogin():
+        window.close()
+        login.exec()
+        window.ui.label.setText(f'Welcome, {login.username}')
+        window.show()
+    window.ui.logoutButton.clicked.connect(relogin)
     sys.exit(app.exec())

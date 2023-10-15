@@ -15,8 +15,8 @@ from PySide6.QtGui import (QBrush, QColor, QConicalGradient, QCursor,
     QFont, QFontDatabase, QGradient, QIcon,
     QImage, QKeySequence, QLinearGradient, QPainter,
     QPalette, QPixmap, QRadialGradient, QTransform)
-from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QSizePolicy,
-    QVBoxLayout, QWidget)
+from PySide6.QtWidgets import (QApplication, QHBoxLayout, QLabel, QPushButton,
+    QSizePolicy, QVBoxLayout, QWidget)
 
 from settingswidget import SettingsWidget
 from visualizationwidget import VisualizationWidget
@@ -38,8 +38,18 @@ class Ui_ModeSelection(object):
         self.horizontalLayout_2.setContentsMargins(0, 0, 0, 0)
         self.label = QLabel(self.widget)
         self.label.setObjectName(u"label")
+        sizePolicy = QSizePolicy(QSizePolicy.Expanding, QSizePolicy.Preferred)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
+        self.label.setSizePolicy(sizePolicy)
 
         self.horizontalLayout_2.addWidget(self.label)
+
+        self.logoutButton = QPushButton(self.widget)
+        self.logoutButton.setObjectName(u"logoutButton")
+
+        self.horizontalLayout_2.addWidget(self.logoutButton)
 
 
         self.verticalLayout.addWidget(self.widget)
@@ -69,5 +79,6 @@ class Ui_ModeSelection(object):
     def retranslateUi(self, ModeSelection):
         ModeSelection.setWindowTitle(QCoreApplication.translate("ModeSelection", u"Mode", None))
         self.label.setText("")
+        self.logoutButton.setText(QCoreApplication.translate("ModeSelection", u"Logout", None))
     # retranslateUi
 
