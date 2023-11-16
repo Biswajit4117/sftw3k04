@@ -1,6 +1,6 @@
 from PySide6.QtWidgets import QDialog, QMessageBox
 from PySide6.QtSql import QSqlError
-from database import insertUser
+from database import insertUser, countUsers  
 
 from ui_registerdialog import Ui_registerDialog
 
@@ -11,6 +11,11 @@ class RegisterDialog(QDialog):
         self.ui.setupUi(self)
     
     def accept(self) -> None:
+        # Check if the number of users has reached the limit before proceeding
+        if countUsers() >= 10:
+            QMessageBox.warning(self, "Register Failed", "User limit reached. No more registrations allowed.")
+            return
+        
         userName = self.ui.userName.text()
         password = self.ui.newPassword.text()
         passwordRepeat = self.ui.repeatPassword.text()

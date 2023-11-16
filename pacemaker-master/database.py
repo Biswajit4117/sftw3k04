@@ -12,6 +12,15 @@ def insertUser(username: str, password: str) -> QSqlError:
         return q.lastError()
     return q.lastError()
 
+def countUsers() -> int:
+    db = QSqlDatabase.database("pmdatabase")
+    query = QSqlQuery(db)
+    query.prepare("SELECT COUNT(*) FROM users")
+    if query.exec() and query.next():
+        return query.value(0)
+    return -1  # Return -1 or an appropriate error code in case of failure
+
+
 
 def initDb() -> QSqlError:
     db = QSqlDatabase.addDatabase("QSQLITE", "pmdatabase")
