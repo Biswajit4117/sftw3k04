@@ -1,0 +1,149 @@
+{
+    "modes": {
+        "AOO": {
+            "description": "Atrial pacing only",
+            "parameters": [
+                {
+                    "name": "Lower Rate Limit",
+                    "value": 60,
+                    "units": "ppm"
+                },
+                {
+                    "name": "Upper Rate Limit",
+                    "value": 120,
+                    "units": "ppm"
+                },
+                {
+                    "name": "Atrial Amplitude",
+                    "value": 3.5,
+                    "units": "V"
+                },
+                {
+                    "name": "Atrial Pulse Width",
+                    "value": 0.5,
+                    "units": "ms"
+                }
+            ]
+        },
+        "VOO": {
+            "description": "Ventricular pacing only",
+            "parameters": [
+                {
+                    "name": "Lower Rate Limit",
+                    "value": 60,
+                    "units": "ppm"
+                },
+                {
+                    "name": "Upper Rate Limit",
+                    "value": 120,
+                    "units": "ppm"
+                },
+                {
+                    "name": "Ventricular Amplitude",
+                    "value": 3.5,
+                    "units": "V"
+                },
+                {
+                    "name": "Ventricular Pulse Width",
+                    "value": 0.5,
+                    "units": "ms"
+                }
+            ]
+        },
+        "VVI": {
+            "description": "Ventricular pacing, sensing, and pacing",
+            "parameters": [
+                {
+                    "name": "Lower Rate Limit",
+                    "value": 60,
+                    "units": "ppm"
+                },
+                {
+                    "name": "Upper Rate Limit",
+                    "value": 120,
+                    "units": "ppm"
+                },
+                {
+                    "name": "Ventricular Amplitude",
+                    "value": 3.5,
+                    "units": "V"
+                },
+                {
+                    "name": "Ventricular Pulse Width",
+                    "value": 0.5,
+                    "units": "ms"
+                },
+                {
+                    "name": "Ventricular Sensitivity",
+                    "value": 2.5,
+                    "units": "mV"
+                },
+                {
+                    "name": "VRP",
+                    "value": 250,
+                    "units": "ms"
+                },
+                {
+                    "name": "Hysteresis",
+                    "value": 0,
+                    "units": "ppm"
+                },
+                {
+                    "name": "Rate Smoothing",
+                    "value": 0,
+                    "units": "ppm"
+                }
+            ]
+        },
+        "AAI": {
+            "description": "Atrial pacing, sensing, and pacing",
+            "parameters": [
+                {
+                    "name": "Lower Rate Limit",
+                    "value": 60,
+                    "units": "ppm"
+                },
+                {
+                    "name": "Upper Rate Limit",
+                    "value": 120,
+                    "units": "ppm"
+                },
+                {
+                    "name": "Atrial Amplitude",
+                    "value": 3.5,
+                    "units": "V"
+                },
+                {
+                    "name": "Atrial Pulse Width",
+                    "value": 0.5,
+                    "units": "ms"
+                },
+                {
+                    "name": "Atrial Sensitivity",
+                    "value": 2.5,
+                    "units": "mV"
+                },
+                {
+                    "name": "ARP",
+                    "value": 250,
+                    "units": "ms"
+                },
+                {
+                    "name": "PVARP",
+                    "value": 250,
+                    "units": "ms"
+                },
+                {
+                    "name": "Hysteresis",
+                    "value": 0,
+                    "units": "ppm"
+                },
+                {
+                    "name": "Rate Smoothing",
+                    "value": 0,
+                    "units": "ppm"
+                }
+            ]
+        }
+    }
+}
